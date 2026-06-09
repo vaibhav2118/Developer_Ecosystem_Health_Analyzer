@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { 
-  ShieldAlert, GitBranch, Star, TrendingUp, AlertTriangle, 
-  User, ArrowRight, Activity 
+  ShieldAlert, GitBranch, Star, AlertTriangle, 
+  User, Activity 
 } from 'lucide-react';
 import { 
-  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, 
+  Tooltip, ResponsiveContainer, 
   PieChart, Pie, Cell, Legend 
 } from 'recharts';
 

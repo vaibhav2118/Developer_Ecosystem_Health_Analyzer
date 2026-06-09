@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { ShieldAlert, RefreshCw, Calendar, Download } from 'lucide-react';
+import { ShieldAlert } from 'lucide-react';
 
 interface Vulnerability {
   osv_id: string;
   title: string;
-  summary: string;
+  summary?: string;
   severity: string;
   cvss_score: number;
   fixed_in?: string;

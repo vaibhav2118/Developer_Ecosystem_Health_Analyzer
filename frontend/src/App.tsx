@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
@@ -14,6 +14,9 @@ import TrendAnalysis from './pages/TrendAnalysis';
 import ReportsCenter from './pages/ReportsCenter';
 import AdminPanel from './pages/AdminPanel';
 import Login from './pages/Login';
+import LandingPage from './landing/LandingPage';
+import { OnboardingTour } from './onboarding/OnboardingTour';
+import { OnboardingWizard } from './onboarding/OnboardingWizard';
 
 // Authentication Guard Wrapper
 const AuthGuard = ({ children }: { children: React.ReactNode }) => {
@@ -26,6 +29,10 @@ const AuthGuard = ({ children }: { children: React.ReactNode }) => {
 
 // Workspace Shell Layout
 const LayoutShell = () => {
+  const [showWizard, setShowWizard] = useState<boolean>(() => {
+    return localStorage.getItem('onboarding_completed') !== 'true';
+  });
+
   return (
     <div style={{ display: 'flex', minHeight: '100vh', background: 'var(--bg-primary)' }}>
       {/* Sidebar navigation */}
@@ -36,7 +43,8 @@ const LayoutShell = () => {
         <Navbar />
         <div style={{ flex: 1, overflowY: 'auto' }}>
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<Navigate to="/dashboard" replace />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/repositories" element={<Repositories />} />
             <Route path="/contributors" element={<ContributorIntelligence />} />
             <Route path="/dependencies" element={<DependencyRisk />} />
@@ -45,10 +53,21 @@ const LayoutShell = () => {
             <Route path="/trends" element={<TrendAnalysis />} />
             <Route path="/reports" element={<ReportsCenter />} />
             <Route path="/admin" element={<AdminPanel />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="*" element={<Navigate to="/dashboard" replace />} />
           </Routes>
         </div>
       </div>
+
+      {/* Guided landmark tour tooltips */}
+      <OnboardingTour />
+
+      {/* Initial repo registration wizard modal */}
+      {showWizard && (
+        <OnboardingWizard 
+          onClose={() => setShowWizard(false)} 
+          onComplete={() => setShowWizard(false)} 
+        />
+      )}
     </div>
   );
 };
@@ -57,6 +76,9 @@ export const App: React.FC = () => {
   return (
     <Router>
       <Routes>
+        {/* Public marketing portal */}
+        <Route path="/" element={<LandingPage />} />
+        
         {/* Public login portal */}
         <Route path="/login" element={<Login />} />
         

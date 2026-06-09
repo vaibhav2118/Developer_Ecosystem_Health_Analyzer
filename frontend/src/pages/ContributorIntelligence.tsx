@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { NetworkGraph } from '../components/NetworkGraph';
-import { AlertOctagon, HelpCircle, Users, Activity, LogOut } from 'lucide-react';
 
 interface ContributorMetrics {
   bus_factor: number;

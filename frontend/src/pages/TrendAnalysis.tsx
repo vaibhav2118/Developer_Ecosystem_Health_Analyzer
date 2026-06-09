@@ -3,7 +3,7 @@ import {
   LineChart, Line, XAxis, YAxis, Tooltip, Legend, 
   ResponsiveContainer, AreaChart, Area 
 } from 'recharts';
-import { Activity, TrendingUp, TrendingDown, RefreshCw } from 'lucide-react';
+import { Activity, TrendingUp, TrendingDown } from 'lucide-react';
 
 interface RepoData {
   id: number;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Shield, ShieldAlert, ShieldAlert as ShieldIcon, AlertOctagon, HelpCircle } from 'lucide-react';
+import { Shield, ShieldAlert, AlertOctagon } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 interface Vulnerability {

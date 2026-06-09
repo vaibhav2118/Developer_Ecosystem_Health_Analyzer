@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FileText, Download, Play, RefreshCw, CheckCircle2 } from 'lucide-react';
+import { FileText, Download, Play, RefreshCw } from 'lucide-react';
 
 interface RepoSummary {
   id: number;

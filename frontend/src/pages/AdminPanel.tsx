@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ShieldAlert, Users, ServerCrash, Clock, User } from 'lucide-react';
+import { ShieldAlert, Clock, User } from 'lucide-react';
 
 interface AuditLog {
   id: number;

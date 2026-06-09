@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ShieldAlert, Bell, Info, ShieldAlert as AlertIcon, AlertOctagon, HelpCircle } from 'lucide-react';
+import { Info } from 'lucide-react';
 
 interface AlertItem {
   id: number;

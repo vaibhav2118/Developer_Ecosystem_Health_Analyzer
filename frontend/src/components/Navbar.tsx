@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ThemeToggle } from './ThemeToggle';
-import { RefreshCw, Play, CheckCircle } from 'lucide-react';
+import { RefreshCw } from 'lucide-react';
 
 interface RepoSummary {
   id: number;
@@ -117,6 +117,7 @@ export const Navbar: React.FC = () => {
         </span>
         {repositories.length > 0 ? (
           <select
+            id="navbar-repo-selector"
             value={selectedId}
             onChange={handleRepoChange}
             style={{
@@ -145,6 +146,7 @@ export const Navbar: React.FC = () => {
 
         {selectedId && (
           <button
+            id="navbar-scan-btn"
             onClick={handleManualAnalyze}
             disabled={isAnalyzing}
             style={{

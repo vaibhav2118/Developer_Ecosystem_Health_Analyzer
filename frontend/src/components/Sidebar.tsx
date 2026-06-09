@@ -7,7 +7,7 @@ import {
 
 export const Sidebar: React.FC = () => {
   const menuItems = [
-    { name: 'Executive Dashboard', path: '/', icon: <LayoutDashboard size={18} /> },
+    { name: 'Executive Dashboard', path: '/dashboard', icon: <LayoutDashboard size={18} /> },
     { name: 'Repository Explorer', path: '/repositories', icon: <GitBranch size={18} /> },
     { name: 'Contributor Intelligence', path: '/contributors', icon: <Users size={18} /> },
     { name: 'Dependency Risk Center', path: '/dependencies', icon: <Boxes size={18} /> },
@@ -70,7 +70,7 @@ export const Sidebar: React.FC = () => {
       </div>
 
       {/* Navigation List */}
-      <div style={{ flex: '1', padding: '20px 12px', display: 'flex', flexDirection: 'column', gap: '4px', overflowY: 'auto' }}>
+      <div id="sidebar-nav" style={{ flex: '1', padding: '20px 12px', display: 'flex', flexDirection: 'column', gap: '4px', overflowY: 'auto' }}>
         {menuItems.map((item) => (
           <NavLink
             key={item.path}

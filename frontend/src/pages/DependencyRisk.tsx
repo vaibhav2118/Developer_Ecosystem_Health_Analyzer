@@ -5,8 +5,10 @@ import { Package, ShieldCheck, AlertTriangle, Scale } from 'lucide-react';
 interface Vulnerability {
   osv_id: string;
   title: string;
+  summary?: string;
   severity: string;
   cvss_score: number;
+  fixed_in?: string;
 }
 
 interface Dependency {

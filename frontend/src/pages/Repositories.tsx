@@ -188,7 +188,7 @@ export const Repositories: React.FC = () => {
                         </span>
                       )}
                     </div>
-                    <p style={{ fontSize: '13px', color: 'var(--text-secondary)', maxWidth: '520px', overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebKitLineClamp: 2, WebKitBoxOrient: 'vertical' }}>
+                    <p style={{ fontSize: '13px', color: 'var(--text-secondary)', maxWidth: '520px', overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
                       {repo.description || 'No description provided.'}
                     </p>
                     <div style={{ display: 'flex', gap: '16px', fontSize: '12px', color: 'var(--text-tertiary)', marginTop: '4px' }}>
